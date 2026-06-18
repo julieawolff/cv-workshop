@@ -68,8 +68,11 @@ export default function Experiences() {
       </div>
       <div className={styles.experiences}>
         {/*TODO Oppgave 3.1, 3.2, 4.1: Vis og sorter alle erfaringene. */}
-        {experiences.map((experience) => (
+        {experiences
+        .sort((a,b) => {return (new Date(b.startDate).getTime() - new Date(a.startDate).getTime())})
+        .map((experience) => (
           <ExperienceCard key={experience.id} experience={experience} />  
+          
         ))}
       </div>
     </div>
