@@ -3,6 +3,7 @@ import styles from "./Experiences.module.css";
 import { CxOption, CxSelect } from "@computas/designsystem/select/react";
 import { experienceTypeMap } from "../types/experienceTypes";
 import { useExperiences } from "../hooks/useExperiences";
+import { ExperienceCard } from "../components/experiences/ExperienceCard";
 
 export default function Experiences() {
   const [selectedExperienceType, setSelectedExperienceType] = useState<
@@ -67,6 +68,9 @@ export default function Experiences() {
       </div>
       <div className={styles.experiences}>
         {/*TODO Oppgave 3.1, 3.2, 4.1: Vis og sorter alle erfaringene. */}
+        {experiences.map((experience) => (
+          <ExperienceCard key={experience.id} experience={experience} />  
+        ))}
       </div>
     </div>
   );
