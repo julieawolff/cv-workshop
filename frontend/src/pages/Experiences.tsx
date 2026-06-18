@@ -10,7 +10,14 @@ export default function Experiences() {
   >(null);
 
   // TODO Oppgave 1.1 of 1.2: Håndter loading og error av erfaringer
-  const { data: experiences } = useExperiences();
+  const { data: experiences, isLoading, error } = useExperiences();
+  if (isLoading) {
+    return <div className={styles.loading}>Loading experiences...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>Error fetching experiences.</div>;
+  }
 
   if (!experiences || experiences.length === 0) {
     return <div className={styles.noExperiences}>No experiences found.</div>;
