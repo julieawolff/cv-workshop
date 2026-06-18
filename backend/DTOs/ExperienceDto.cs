@@ -1,4 +1,6 @@
-﻿namespace backend.DTOs;
+﻿using backend.Data.Models;
+
+namespace backend.DTOs;
 
 public record ExperienceDto(
     Guid Id,
