@@ -29,26 +29,27 @@ export default function Experiences() {
     const selectedFilter = customEvent.detail.value;
     console.log(selectedFilter);
     // TODO Oppgave 5.1: Filtrer experiences etter type
+    setSelectedExperienceType(selectedFilter);
   };
 
-  // const filteredExperiences = () => {
-  //   const validTypes = Object.keys(experienceTypeMap).filter(
-  //     (type) => type !== "other",
-  //   );
+  const filteredExperiences = () => {
+    const validTypes = Object.keys(experienceTypeMap).filter(
+      (type) => type !== "other",
+    );
 
-  //   if (selectedExperienceType === "other") {
-  //     return experiences.filter(
-  //       (experience) => !validTypes.includes(experience.type.toLowerCase()),
-  //     );
-  //   } else if (selectedExperienceType) {
-  //     return experiences.filter(
-  //       (experience) =>
-  //         experience.type.toLowerCase() ===
-  //         selectedExperienceType.toLowerCase(),
-  //     );
-  //   }
-  //   return experiences;
-  // };
+    if (selectedExperienceType === "other") {
+      return experiences.filter(
+        (experience) => !validTypes.includes(experience.type.toLowerCase()),
+      );
+    } else if (selectedExperienceType) {
+      return experiences.filter(
+        (experience) =>
+          experience.type.toLowerCase() ===
+          selectedExperienceType.toLowerCase(),
+      );
+    }
+    return experiences;
+  };
 
   return (
     <div className={styles.container}>
@@ -68,10 +69,10 @@ export default function Experiences() {
       </div>
       <div className={styles.experiences}>
         {/*TODO Oppgave 3.1, 3.2, 4.1: Vis og sorter alle erfaringene. */}
-        {experiences
+        {filteredExperiences()
         .sort((a,b) => {return (new Date(b.startDate).getTime() - new Date(a.startDate).getTime())})
-        .map((experience) => (
-          <ExperienceCard key={experience.id} experience={experience} />  
+        .map((e) => (
+          <ExperienceCard key={e.id} experience={e} />  
           
         ))}
       </div>
