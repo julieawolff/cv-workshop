@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--cx-color-blue-100);
-  color: var(--cx-color-dark-blue);
+  background-color: var(--cx-color-dark-blue);
+  color: var(--cx-color-text-inverted);
   font-size: 3rem;
   font-weight: 700;
   user-select: none;
