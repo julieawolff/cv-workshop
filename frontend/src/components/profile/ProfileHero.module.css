@@ -1,0 +1,39 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cx-spacing-4);
+  text-align: center;
+}
+
+.name {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--cx-color-text-primary);
+}
+
+.tagline {
+  margin: 0;
+  color: var(--cx-color-text-less-important);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--cx-spacing-2) var(--cx-spacing-6);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: var(--cx-spacing-2);
+  font-size: 0.9rem;
+  color: var(--cx-color-grey-600);
+}
+
+.linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cx-spacing-2);
+}
