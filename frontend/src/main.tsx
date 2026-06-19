@@ -19,6 +19,8 @@ import {
   soccer,
   beer,
   close,
+  external,
+  phone,
 } from "@computas/designsystem/icon/iconRegistry";
 import "./index.css"; // Optional: Global styles
 
@@ -39,6 +41,8 @@ addIcons(
   soccer,
   beer,
   close,
+  external,
+  phone,
 );
 
 const queryClient = new QueryClient();
