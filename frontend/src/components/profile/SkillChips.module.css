@@ -1,0 +1,6 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cx-spacing-3);
+  justify-content: center;
+}
