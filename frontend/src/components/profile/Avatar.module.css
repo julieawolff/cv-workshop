@@ -1,0 +1,27 @@
+.image,
+.fallback {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cx-color-blue-100);
+  color: var(--cx-color-dark-blue);
+  font-size: 3rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .image,
+  .fallback {
+    width: 120px;
+    height: 120px;
+    font-size: 2.25rem;
+  }
+}
